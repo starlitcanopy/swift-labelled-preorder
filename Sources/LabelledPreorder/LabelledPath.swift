@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+//
+// SPDX-License-Identifier: MPL-2.0
+
 /// The entry point into this library: you must supply an instance of the protocol ``LabelledPath`` with which to instantiate ``LabelledPreorder``.
 public protocol LabelledPath: Sendable {
   associatedtype Vertex: Hashable & Sendable

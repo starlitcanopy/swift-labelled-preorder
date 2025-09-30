@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+//
+// SPDX-License-Identifier: MPL-2.0
+
 /// Represents the boundary of a path in a graph, preorder, or category.
 public struct Boundary<Vertex> {
   let source: Vertex

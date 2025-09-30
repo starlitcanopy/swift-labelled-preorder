@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+//
+// SPDX-License-Identifier: MPL-2.0
+
 /// A labelled preorder is a preorder in which arrows/paths are coherently equipped with labels. Coherence here means that the projection of labels is preserved by composition.
 ///
 /// This is an actor because it closes over some internal state that is used to ensure that diamonds can be computed efficiently.

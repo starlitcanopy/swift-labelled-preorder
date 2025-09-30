@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+//
+// SPDX-License-Identifier: MPL-2.0
+
 // swift-tools-version: 6.2
 import PackageDescription
 

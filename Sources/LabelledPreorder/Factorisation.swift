@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+//
+// SPDX-License-Identifier: MPL-2.0
+
 extension LabelledPreorder {
   /// Represents an (optional) pre-and-post composition of a path.
   public struct Factorisation: Sendable {

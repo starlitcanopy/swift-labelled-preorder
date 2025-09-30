@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 The Project Pterodactyl Developers
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # ``LabelledPreorder``
 
 
