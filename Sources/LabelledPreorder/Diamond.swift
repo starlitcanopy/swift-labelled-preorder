@@ -2,13 +2,6 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-//
-//  Diamond.swift
-//  LabelledPreorder
-//
-//  Created by Jonathan Sterling on 2025-09-30.
-//
-
 extension LabelledPreorder {
   /// A “diamond” in the context of Sakaguchi’s algorithm is a three-place factorisation being compared against a single path.
   public struct Diamond: Sendable {
