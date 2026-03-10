@@ -121,33 +121,21 @@ extension LabelledPreorder {
   private func irreducibleFactorisations(inducedBy middle: Path) -> [Factorisation] {
     var factorisations: [Factorisation] = []
 
-    func appendIfIrreducible(left: Path? = nil, right: Path? = nil) {
-      let factorisation = Factorisation(
-        left: left,
-        middle: middle,
-        right: right
-      )
-      if isIrreducible(factorisation: factorisation) {
-        factorisations.append(factorisation)
-      }
-    }
-
     for ancestor in coslice(middle.source) {
       let left = path(from: ancestor, to: middle.source)!
-      guard !left.boundary.isLoop else { continue }
-      // u--[p]--x--[c]--y
-      appendIfIrreducible(left: left)
-
       for descendent in slice(middle.target) {
         let right = path(from: middle.target, to: descendent)!
-        guard !right.boundary.isLoop else { continue }
-        // u-[p]-x-[c]-y-[q]-z
-        appendIfIrreducible(left: left, right: right)
-      }
 
-      // u--[p]--x--[c]--u induces x--[c]--u--[p]--x, which we must also check
-      if left.source == middle.target {
-        appendIfIrreducible(right: left)
+        // u-[p]-x-[c]-y-[q]-z
+        let factorisation = Factorisation(
+          left: left,
+          middle: middle,
+          right: right
+        )
+
+        if isIrreducible(factorisation: factorisation) {
+          factorisations.append(factorisation)
+        }
       }
     }
 

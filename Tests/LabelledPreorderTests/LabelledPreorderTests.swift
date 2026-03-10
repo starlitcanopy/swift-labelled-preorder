@@ -118,3 +118,19 @@ extension LabelledPreorder where Path == StringPath {
   }
   #expect(await table.hasPath(from: "a", to: "a"))
 }
+
+@Test func incoherentTriangle() async throws {
+  let table = LabelledPreorder<StringPath>()
+ 
+  await #expect(throws: Never.self) {
+    try await table.addEdge(from: "a", to: "c", label: "f")
+    try await table.addEdge(from: "b", to: "c", label: "g")
+  }
+
+  let error = await #expect(throws: LabelledPreorder<StringPath>.CoherenceError.self) {
+    try await table.addEdge(from: "a", to: "b", label: "incoherent")
+  }
+ 
+  guard let error else { return }
+  #expect(!error.violations.isEmpty)
+}
